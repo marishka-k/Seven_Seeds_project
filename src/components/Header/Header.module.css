@@ -1,0 +1,92 @@
+/* Шапка поверх первого экрана; при прокрутке получает полупрозрачный фон с размытием.
+   Фон — на ::before: backdrop-filter на самой шапке сделал бы её контейнером
+   для fixed-меню, и бургер-меню обрезалось бы по высоте шапки */
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+  height: var(--header-h);
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--color-header-bg);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.header_scrolled::before {
+  opacity: 1;
+}
+
+.header__inner {
+  position: relative;
+  max-width: var(--page-max);
+  height: 100%;
+  margin: 0 auto;
+}
+
+.header__nav {
+  display: none;
+}
+
+.header__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--menu-gap);
+  height: 100%;
+}
+
+.header__link {
+  color: var(--color-menu);
+  font-size: var(--fs-menu);
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+  transition: color 0.2s;
+}
+
+.header__link:hover {
+  color: var(--color-accent);
+}
+
+.header__link_active {
+  color: var(--color-accent);
+  text-decoration-line: underline;
+}
+
+/* Бургер: иконка 25×17, центр — как в макете (342,5; 42) */
+.header__burger {
+  position: absolute;
+  top: 24px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+@media (min-width: 1024px) {
+  .header__nav {
+    display: block;
+    height: 100%;
+  }
+
+  .header__burger {
+    display: none;
+  }
+}

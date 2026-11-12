@@ -1,0 +1,20 @@
+.fact {
+  display: flex;
+  align-items: center;
+  gap: var(--fact-icon-gap);
+  height: 100%;
+  padding: var(--fact-pad-y) var(--fact-pad-x);
+  border: var(--border) solid var(--color-accent);
+  border-radius: var(--radius);
+}
+
+.fact__icon {
+  flex-shrink: 0;
+  width: var(--fact-icon);
+  height: var(--fact-icon);
+}
+
+.fact__text {
+  font-size: var(--fs-fact);
+  line-height: var(--lh-fact);
+}

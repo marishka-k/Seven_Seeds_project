@@ -1,0 +1,34 @@
+.dish {
+  height: 100%;
+  padding: var(--dish-pad) var(--dish-pad) var(--dish-pad-bottom);
+  border: var(--border) solid var(--color-accent);
+  border-radius: var(--radius);
+}
+
+.dish__photo {
+  width: 100%;
+  height: var(--dish-photo-h);
+  border-radius: var(--dish-photo-radius);
+  object-fit: cover;
+}
+
+.dish__text {
+  margin-top: var(--dish-text-gap);
+  font-size: var(--fs-dish);
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* Строки подписи как в макете; если не помещаются — переносятся */
+.dish__line {
+  display: block;
+}
+
+/* 600–1023: карточки сеткой, фото сохраняет пропорции мобильного макета */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .dish__photo {
+    height: auto;
+    aspect-ratio: 237 / 200;
+  }
+}

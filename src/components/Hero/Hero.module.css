@@ -1,0 +1,92 @@
+/* Фон — фото из макета без текста; шапка лежит поверх */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow-x: clip; /* фото шире экрана не даёт горизонтальной прокрутки */
+  padding: var(--hero-pt) var(--page-pad) 0;
+  text-align: center;
+}
+
+/* Мобильная: размытый фон растягивается на всю ширину */
+.hero__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  max-width: none;
+  height: 450px;
+  object-fit: fill;
+  pointer-events: none;
+}
+
+.hero__title {
+  font-size: var(--fs-h1);
+  font-weight: 700;
+  line-height: var(--lh-h1);
+}
+
+.hero__date {
+  margin-top: var(--hero-date-gap);
+  color: var(--color-accent);
+  font-size: var(--fs-date);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.hero__lead {
+  margin-top: var(--hero-lead-gap);
+  font-size: var(--fs-lead);
+  font-weight: var(--fw-lead);
+  line-height: 1.2;
+}
+
+.hero__line {
+  display: block;
+}
+
+.hero__button {
+  margin-top: var(--hero-btn-gap);
+}
+
+/* Лаптоп: фото 1024 по центру, низ мягко уходит в фон */
+@media (min-width: 1024px) {
+  .hero__bg {
+    left: 50%;
+    width: 1024px;
+    height: 610px;
+    transform: translateX(-50%);
+    -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 60px), transparent);
+    mask-image: linear-gradient(to bottom, #000 calc(100% - 60px), transparent);
+  }
+}
+
+/* Шире макета — края фото растворяются в фоне */
+@media (min-width: 1025px) and (max-width: 1439px) {
+  .hero__bg {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 80px, #000 calc(100% - 80px), transparent),
+      linear-gradient(to bottom, #000 calc(100% - 60px), transparent);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(to right, transparent, #000 80px, #000 calc(100% - 80px), transparent),
+      linear-gradient(to bottom, #000 calc(100% - 60px), transparent);
+    mask-composite: intersect;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero__bg {
+    width: 1440px;
+    height: 800px;
+  }
+}
+
+@media (min-width: 1441px) {
+  .hero__bg {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 120px, #000 calc(100% - 120px), transparent),
+      linear-gradient(to bottom, #000 calc(100% - 60px), transparent);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(to right, transparent, #000 120px, #000 calc(100% - 120px), transparent),
+      linear-gradient(to bottom, #000 calc(100% - 60px), transparent);
+    mask-composite: intersect;
+  }
+}

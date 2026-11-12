@@ -1,0 +1,18 @@
+.note {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--note-gap);
+}
+
+.note__text {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--note-h);
+  padding: 0 var(--note-px);
+  border-radius: var(--note-radius);
+  background: var(--color-note);
+  font-size: var(--fs-note);
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+}

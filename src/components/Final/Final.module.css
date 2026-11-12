@@ -1,0 +1,103 @@
+/* Фон — салат из макета, прижат к низу блока, края растворяются в фоне */
+.final {
+  position: relative;
+  isolation: isolate;
+  overflow-x: clip; /* фото шире экрана не даёт горизонтальной прокрутки */
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: var(--final-gap) var(--page-pad) var(--final-pb);
+  text-align: center;
+}
+
+.final__bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  width: 375px;
+  max-width: none;
+  height: 272px;
+  object-fit: cover;
+  object-position: left bottom;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 60px), transparent),
+    linear-gradient(to bottom, #000 calc(100% - 24px), transparent);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, #000 calc(100% - 60px), transparent),
+    linear-gradient(to bottom, #000 calc(100% - 24px), transparent);
+  mask-composite: intersect;
+}
+
+.final__title {
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.final__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--info-gap);
+  margin-top: var(--final-date-gap);
+  font-size: var(--fs-info);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.final__accent {
+  color: var(--color-accent);
+}
+
+.final__button {
+  margin-top: var(--final-btn-gap);
+}
+
+@media (min-width: 1024px) {
+  /* Контент — над второй и третьей колонками сетки из трёх */
+  .final__content {
+    margin-left: calc((100% - 2 * var(--grid-gap)) / 3 + var(--grid-gap));
+  }
+
+  .final__break {
+    display: none;
+  }
+
+  .final__bg {
+    left: 50%;
+    width: 1024px;
+    height: 424px;
+    transform: translateX(-50%);
+    -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 24px), transparent);
+    mask-image: linear-gradient(to bottom, #000 calc(100% - 24px), transparent);
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1439px) {
+  .final__bg {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 80px, #000 calc(100% - 80px), transparent),
+      linear-gradient(to bottom, #000 calc(100% - 24px), transparent);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(to right, transparent, #000 80px, #000 calc(100% - 80px), transparent),
+      linear-gradient(to bottom, #000 calc(100% - 24px), transparent);
+    mask-composite: intersect;
+  }
+}
+
+@media (min-width: 1440px) {
+  .final__bg {
+    width: 1440px;
+    height: 528px;
+  }
+}
+
+@media (min-width: 1441px) {
+  .final__bg {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 120px, #000 calc(100% - 120px), transparent),
+      linear-gradient(to bottom, #000 calc(100% - 24px), transparent);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(to right, transparent, #000 120px, #000 calc(100% - 120px), transparent),
+      linear-gradient(to bottom, #000 calc(100% - 24px), transparent);
+    mask-composite: intersect;
+  }
+}

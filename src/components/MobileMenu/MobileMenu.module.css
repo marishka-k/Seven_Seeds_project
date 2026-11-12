@@ -1,0 +1,68 @@
+/* Полноэкранная панель в оранжевой рамке, выезжает справа */
+.menu {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--border) solid var(--color-accent);
+  background: var(--color-bg);
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.menu_open {
+  transform: none;
+  visibility: visible;
+  transition: transform 0.3s ease;
+}
+
+/* Координаты из макета минус рамка 2 px */
+.menu .menu__logo {
+  top: 16px;
+  left: 18px;
+}
+
+.menu__close {
+  position: absolute;
+  top: 18px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+.menu__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.menu__link {
+  display: block;
+  color: var(--color-menu);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+
+.menu__link_active {
+  color: var(--color-accent);
+  text-decoration-line: underline;
+}
+
+@media (min-width: 1024px) {
+  .menu {
+    display: none;
+  }
+}

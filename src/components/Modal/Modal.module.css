@@ -1,0 +1,78 @@
+/* Окна регистрации нет в макете — оформлено в стиле карточек: фон страницы, оранжевая рамка */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.4);
+  overflow-y: auto;
+  animation: modal-fade 0.2s ease-out;
+}
+
+.modal__dialog {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin: auto;
+  padding: 40px 20px 24px;
+  border: var(--border) solid var(--color-accent);
+  border-radius: var(--radius);
+  background: var(--color-bg);
+  outline: none;
+  animation: modal-rise 0.25s ease-out;
+}
+
+.modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+.modal__close img {
+  width: 16px;
+  height: 16px;
+}
+
+.modal__close:hover {
+  opacity: 0.6;
+}
+
+@media (min-width: 1024px) {
+  .modal__dialog {
+    max-width: 560px;
+    padding: 48px 40px 40px;
+  }
+
+  .modal__close {
+    top: 16px;
+    right: 16px;
+  }
+
+  .modal__close img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@keyframes modal-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes modal-rise {
+  from {
+    transform: translateY(16px);
+  }
+}

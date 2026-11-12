@@ -1,0 +1,49 @@
+/* Мобильная: без фото (как в макете 375) */
+.host {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: var(--host-gap) var(--page-pad) 0;
+}
+
+.host__photo {
+  display: none;
+}
+
+.host__name {
+  margin-top: var(--name-gap);
+  color: var(--color-accent-dark);
+  font-size: var(--fs-name);
+  font-weight: var(--fw-name);
+  line-height: 1.2;
+}
+
+.host__facts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 1fr;
+  gap: var(--facts-row-gap) var(--grid-gap);
+  margin-top: var(--facts-gap);
+}
+
+/* Лаптоп и десктоп: фото в первой колонке сетки из трёх, текст — в двух других */
+@media (min-width: 1024px) {
+  .host {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: var(--grid-gap);
+  }
+
+  .host__photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius);
+    object-fit: cover;
+  }
+
+  /* верх заглавных букв заголовка — на уровне верха фото */
+  .host__content {
+    grid-column: 2 / 4;
+    margin-top: var(--host-title-shift);
+  }
+}

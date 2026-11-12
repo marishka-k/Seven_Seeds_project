@@ -1,0 +1,27 @@
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--dot);
+  margin-top: var(--dot);
+}
+
+.dots__dot {
+  width: var(--dot);
+  height: var(--dot);
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--color-dot);
+  transition: background-color 0.2s;
+}
+
+.dots__dot_active {
+  background: var(--color-accent);
+}
+
+/* С 600 px карточки стоят сеткой — точки не нужны */
+@media (min-width: 600px) {
+  .dots {
+    display: none;
+  }
+}

@@ -1,0 +1,106 @@
+.feature {
+  position: relative;
+  height: 100%;
+  padding: var(--feature-pad-y) var(--feature-pad-x);
+  border: var(--border) solid var(--color-accent);
+  border-radius: var(--radius);
+  background: var(--color-bg);
+}
+
+.feature__head {
+  display: flex;
+  align-items: center;
+  gap: var(--check-gap);
+  font-size: var(--fs-feature);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.feature__check {
+  flex-shrink: 0;
+  width: var(--check-w);
+  height: var(--check-h);
+  margin-left: var(--check-ml);
+}
+
+/* Кнопка растянута на всю карточку — клик по любому месту раскрывает текст */
+.feature__toggle {
+  padding: 0;
+  border: 0;
+  background: none;
+  font-weight: inherit;
+  line-height: inherit;
+  text-align: left;
+  cursor: default;
+}
+
+.feature__toggle::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.feature__toggle:focus-visible {
+  outline: none;
+}
+
+.feature:has(.feature__toggle:focus-visible) {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
+}
+
+.feature__text {
+  margin-top: var(--feature-gap);
+  font-size: var(--fs-feature);
+  font-weight: 500;
+  line-height: var(--lh-feature);
+}
+
+/* Лаптоп и десктоп: четыре строки и многоточие, полный текст — в раскрытой карточке */
+@media (min-width: 1024px) {
+  .feature__toggle {
+    cursor: pointer;
+  }
+
+  .feature__text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+  }
+
+  .feature_expanded {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 5;
+    height: auto;
+    min-height: 100%;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .feature_expanded .feature__text {
+    display: block;
+    -webkit-line-clamp: none;
+  }
+}
+
+@media (min-width: 1024px) and (hover: hover) {
+  .feature:hover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 5;
+    height: auto;
+    min-height: 100%;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .feature:hover .feature__text {
+    display: block;
+    -webkit-line-clamp: none;
+  }
+}

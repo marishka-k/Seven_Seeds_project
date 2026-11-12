@@ -1,0 +1,39 @@
+.features {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: var(--section-gap) var(--page-pad) 0;
+}
+
+/* Мобильная: слайдер, все карточки одной высоты */
+.features__list {
+  display: flex;
+  gap: var(--grid-gap);
+  margin-top: var(--title-gap);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.features__list::-webkit-scrollbar {
+  display: none;
+}
+
+.features__item {
+  position: relative;
+  flex: 0 0 var(--slide-w);
+  scroll-snap-align: start;
+}
+
+@media (min-width: 600px) {
+  .features__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow: visible;
+  }
+}
+
+@media (min-width: 1024px) {
+  .features__list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

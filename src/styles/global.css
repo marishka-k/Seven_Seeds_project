@@ -1,0 +1,335 @@
+/* Montserrat подключён в index.html (Google Fonts, OFL) */
+
+:root {
+  /* Цвета из макета */
+  --color-bg: #cedde1;
+  --color-text: #000000;
+  --color-menu: #545a5b;
+  --color-accent: #ff781e;
+  --color-accent-dark: #e55f15;
+  --color-note: #ddbfa7;
+  --color-dot: #e7aa7f;
+  --color-white: #ffffff;
+  --color-error: #c62828;
+  --color-header-bg: rgba(206, 221, 225, 0.72);
+
+  --font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+
+  /*
+   * Три версии: мобильная (до 1023 px, макет 375), лаптоп (1024–1439 px,
+   * макет 1024), десктоп (от 1440 px, макет 1440).
+   * Ниже — мобильная, остальные переопределяются медиазапросами.
+   */
+  --page-max: 1440px;
+  --page-pad: 20px;
+  --radius: 16px;
+  --border: 2px;
+
+  /* Шапка */
+  --header-h: 74px;
+  --logo-w: 40px;
+  --logo-h: 48px;
+  --logo-top: 18px;
+  --logo-left: 20px;
+  --fs-menu: 16px;
+  --menu-gap: 32px;
+
+  /* Первый экран */
+  --hero-pt: 118px;
+  --fs-h1: 30px;
+  --lh-h1: 36px;
+  --fs-date: 16px;
+  --fs-lead: 16px;
+  --fw-lead: 500;
+  --hero-date-gap: 20px;
+  --hero-lead-gap: 30px;
+  --hero-btn-gap: 24px;
+
+  /* Кнопка */
+  --btn-h: 28px;
+  --btn-px: 12px;
+  --btn-fs: 12px;
+  --btn-radius: 14px;
+
+  /* Разделы */
+  --section-gap: 44px;
+  --fs-h2: 24px;
+  --title-gap: 24px;
+
+  /* Карточки блюд */
+  --dish-pad: 18px;
+  --dish-pad-bottom: 16px;
+  --dish-photo-h: 200px;
+  --dish-photo-radius: 6px;
+  --dish-text-gap: 8px;
+  --fs-dish: 12px;
+  --grid-gap: 10px;
+  --slide-w: 276px;
+
+  /* Карточки «Что интересного?» */
+  --feature-pad-y: 8px;
+  --feature-pad-x: 8px;
+  --feature-gap: 8px;
+  --fs-feature: 12px;
+  --lh-feature: 14px;
+  --check-w: 12px;
+  --check-h: 8px;
+  --check-ml: 2px;
+  --check-gap: 22px;
+
+  /* Точки слайдера */
+  --dot: 10px;
+
+  /* Плашка «После встречи…» */
+  --note-gap: 30px;
+  --note-h: 28px;
+  --note-px: 10px;
+  --note-radius: 14px;
+  --fs-note: 12px;
+
+  /* Ведущая */
+  --host-gap: 44px;
+  --host-title-shift: 0px;
+  --fs-name: 16px;
+  --fw-name: 600;
+  --name-gap: 2px;
+  --facts-gap: 24px;
+  --facts-row-gap: 10px;
+  --fact-pad-y: 2px;
+  --fact-pad-x: 4px;
+  --fact-icon: 12px;
+  --fact-icon-gap: 4px;
+  --fs-fact: 12px;
+  --lh-fact: 14px;
+
+  /* Финальный блок */
+  --final-gap: 44px;
+  --final-date-gap: 24px;
+  --fs-info: 16px;
+  --info-gap: 2px;
+  --final-btn-gap: 24px;
+  --final-pb: 50px;
+}
+
+/* Лаптоп — макет 1024 */
+@media (min-width: 1024px) {
+  :root {
+    --page-pad: 50px;
+    --radius: 20px;
+
+    --header-h: 70px;
+    --logo-top: 10px;
+    --logo-left: 100px;
+
+    --hero-pt: 160px;
+    --fs-h1: 40px;
+    --lh-h1: 48px;
+    --fs-date: 20px;
+    --fs-lead: 20px;
+    --fw-lead: 600;
+    --hero-date-gap: 36px;
+    --hero-lead-gap: 28px;
+    --hero-btn-gap: 46px;
+
+    --btn-h: 64px;
+    --btn-px: 26px;
+    --btn-fs: 20px;
+    --btn-radius: 20px;
+
+    --section-gap: 92px;
+    --fs-h2: 30px;
+    --title-gap: 32px;
+
+    --dish-pad-bottom: 16px;
+    --dish-text-gap: 10px;
+    --fs-dish: 16px;
+    --grid-gap: 20px;
+
+    --feature-pad-y: 6px;
+    --feature-gap: 12px;
+    --fs-feature: 16px;
+    --lh-feature: 24px;
+
+    --note-gap: 52px;
+    --note-h: 32px;
+    --note-px: 16px;
+    --note-radius: 16px;
+    --fs-note: 20px;
+
+    --host-gap: 100px;
+    --host-title-shift: -8px;
+    --fs-name: 20px;
+    --facts-gap: 36px;
+    --facts-row-gap: 20px;
+    --fact-pad-y: 6px;
+    --fact-pad-x: 8px;
+    --fact-icon: 16px;
+    --fact-icon-gap: 10px;
+    --fs-fact: 16px;
+    --lh-fact: 22px;
+
+    --final-gap: 92px;
+    --final-date-gap: 58px;
+    --fs-info: 20px;
+    --info-gap: 8px;
+    --final-btn-gap: 48px;
+    --final-pb: 92px;
+  }
+}
+
+/* Десктоп — макет 1440 */
+@media (min-width: 1440px) {
+  :root {
+    --page-pad: 100px;
+
+    --header-h: 100px;
+    --logo-w: 50px;
+    --logo-h: 60px;
+    --logo-top: 20px;
+    --fs-menu: 20px;
+
+    --hero-pt: 234px;
+    --fs-h1: 60px;
+    --lh-h1: 72px;
+    --fs-date: 24px;
+    --hero-date-gap: 30px;
+
+    --btn-h: 68px;
+    --btn-px: 32px;
+    --btn-fs: 24px;
+
+    --section-gap: 140px;
+    --fs-h2: 40px;
+    --title-gap: 40px;
+
+    --dish-pad: 28px;
+    --dish-pad-bottom: 24px;
+    --dish-photo-h: 300px;
+    --dish-text-gap: 14px;
+    --fs-dish: 20px;
+    --grid-gap: 30px;
+
+    --feature-pad-y: 16px;
+    --feature-pad-x: 16px;
+    --fs-feature: 20px;
+    --check-w: 14px;
+    --check-h: 10px;
+    --check-gap: 24px;
+
+    --note-gap: 50px;
+    --note-h: 58px;
+    --note-px: 20px;
+    --note-radius: 20px;
+    --fs-note: 24px;
+
+    --host-gap: 154px;
+    --host-title-shift: -10px;
+    --fs-name: 30px;
+    --fw-name: 700;
+    --name-gap: 12px;
+    --facts-gap: 42px;
+    --fact-pad-y: 16px;
+    --fact-pad-x: 16px;
+    --fact-icon: 20px;
+    --fact-icon-gap: 12px;
+    --fs-fact: 20px;
+
+    --final-gap: 128px;
+    --final-date-gap: 36px;
+    --fs-info: 24px;
+    --final-btn-gap: 46px;
+    --final-pb: 150px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-h);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: var(--fs-lead);
+  line-height: 1.2;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body.scroll-locked {
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

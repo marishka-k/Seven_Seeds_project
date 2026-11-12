@@ -1,0 +1,13 @@
+.title {
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.title_align_center {
+  text-align: center;
+}
+
+.title_align_left {
+  text-align: left;
+}
